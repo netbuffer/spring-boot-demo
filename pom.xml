@@ -78,7 +78,7 @@
         <dependency>
             <groupId>cn.netbuffer</groupId>
             <artifactId>print-server-address</artifactId>
-            <version>1.0.1</version>
+            <version>1.1.1</version>
         </dependency>
     </dependencies>
 

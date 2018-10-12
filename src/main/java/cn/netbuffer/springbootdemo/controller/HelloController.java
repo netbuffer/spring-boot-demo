@@ -14,13 +14,14 @@ public class HelloController {
 
     private static final SimpleDateFormat FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-    @GetMapping("hello")
+    @GetMapping(value = {"/", "hello"})
     public String hello(@RequestParam(value = "name", required = false) String name) {
         return "hello:" + name;
     }
 
     /**
      * 测试println对象锁占用阻塞
+     *
      * @return
      */
     @GetMapping("println")
@@ -42,6 +43,6 @@ public class HelloController {
             }
         }
         log.info("end");
-        return sleep + "s :"+FORMAT.format(new Date());
+        return sleep + "s :" + FORMAT.format(new Date());
     }
 }
