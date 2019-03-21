@@ -5,3 +5,5 @@ server:
 spring:
   application:
     name: demo2
+maven:
+  mvn-arg:@mvn-arg@

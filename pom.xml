@@ -27,10 +27,31 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <profiles>
+        <profile>
+            <id>test</id>
+            <!--设置在满足对应条件下激活当前profile构建-->
+            <activation>
+                <os>
+                    <name>windows</name>
+                </os>
+            </activation>
+        </profile>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <os>
+                    <name>Linux</name>
+                </os>
+            </activation>
+        </profile>
+    </profiles>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <mvn-arg>0</mvn-arg>
     </properties>
 
     <repositories>
@@ -93,7 +114,13 @@
     </dependencies>
 
     <build>
-        <finalName>${name}</finalName>
+        <finalName>${project.name}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -104,6 +131,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>
