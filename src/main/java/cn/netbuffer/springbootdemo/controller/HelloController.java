@@ -45,4 +45,15 @@ public class HelloController {
         log.info("end");
         return sleep + "s :" + FORMAT.format(new Date());
     }
+
+    /**
+     * 从配置文件读取mapping映射
+     * @return
+     */
+    @GetMapping("${req.mapping.user}")
+    @ResponseBody
+    public String reqMappingUser() {
+        return "reqMappingUser";
+    }
+
 }
