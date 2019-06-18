@@ -27,6 +27,14 @@ public class ParamController {
         return id;
     }
 
+    //error
+    @GetMapping("long/basic-type")
+    @ResponseBody
+    public long getLong(@RequestParam(value = "id",required = false) long id){
+        log.info("id:{}",id);
+        return id;
+    }
+
     @GetMapping("str1")
     @ResponseBody
     public String str1(String str1){
