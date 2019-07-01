@@ -2,6 +2,7 @@
 ![](https://img.shields.io/badge/springboot-2.0.2.RELEAS-blue.svg?color=blue&message=)
 * spring-boot2.0
 * https://shields.io/
+* [spring-security](https://docs.spring.io/spring-security/site/docs/5.0.5.RELEASE/reference/htmlsingle/)
 
 # mvn打包测试 
 > `mvn -Dmvn-arg=自定义 -DskipTests clean package -P test`  

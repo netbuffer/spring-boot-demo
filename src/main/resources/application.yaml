@@ -3,3 +3,9 @@ server:
 req:
   mapping:
     user: user
+
+spring:
+  security:
+    user:
+      name: user
+      password: user
