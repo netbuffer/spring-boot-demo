@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>csrf-test</title>
+</head>
+<body>
+<th:block th:if="${name!=null}">
+    <div>your input:<span th:text="${name}"></span></div>
+</th:block>
+<form action="" method="post">
+    <input name="name" type="text" placeholder="请输入姓名"/>
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+    <button type="submit">提交</button>
+</form>
+</body>
+</html>
