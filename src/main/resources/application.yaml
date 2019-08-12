@@ -3,3 +3,8 @@ server:
 req:
   mapping:
     user: user
+var:
+  random-int1: ${random.int}
+  random-int2: ${random.int(3)}
+  random-int3: ${random.int(1,10)}
+  random-value: ${random.value}
