@@ -8,3 +8,7 @@ var:
   random-int2: ${random.int(3)}
   random-int3: ${random.int(1,10)}
   random-value: ${random.value}
+
+logging:
+  level:
+    root: WARN
