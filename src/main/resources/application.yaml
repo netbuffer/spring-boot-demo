@@ -12,3 +12,6 @@ var:
 logging:
   level:
     root: WARN
+    org:
+      springframework:
+        web: INFO
