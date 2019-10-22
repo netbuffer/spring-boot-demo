@@ -10,7 +10,7 @@
 
     <name>spring-boot-demo</name>
     <url>https://github.com/netbuffer/spring-boot-demo</url>
-    <description>Demo project for Spring Boot</description>
+    <description>spring-boot 相关技术测试</description>
 
     <developers>
         <developer>
@@ -114,6 +114,11 @@
             <groupId>cn.netbuffer</groupId>
             <artifactId>print-server-address</artifactId>
             <version>2.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+            <version>2.10.0</version>
         </dependency>
     </dependencies>
 

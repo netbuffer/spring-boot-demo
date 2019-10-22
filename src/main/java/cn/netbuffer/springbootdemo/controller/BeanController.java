@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @RestController
@@ -62,6 +64,14 @@ public class BeanController {
             beanNames.add(reader.getClassMetadata().getClassName());
         }
         return beanNames;
+    }
+
+    @GetMapping(value = {"map"})
+    public Map getMap() {
+        Map data = new HashMap();
+        data.put("name", "test");
+        data.put("age", "30");
+        return data;
     }
 
 }
