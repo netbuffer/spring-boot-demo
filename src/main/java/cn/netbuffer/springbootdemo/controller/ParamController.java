@@ -4,6 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+
 @Slf4j
 @RestController
 @RequestMapping("/param")
@@ -47,14 +49,12 @@ public class ParamController {
      * @return
      */
     @GetMapping
-    @ResponseBody
     public long get(long id) {
         log.info("id:{}", id);
         return id;
     }
 
     @GetMapping("long")
-    @ResponseBody
     public Long getLong(Long id) {
         log.info("id:{}", id);
         return id;
@@ -62,30 +62,36 @@ public class ParamController {
 
     //error
     @GetMapping("long/basic-type")
-    @ResponseBody
     public long getLong(@RequestParam(value = "id", required = false) long id) {
         log.info("id:{}", id);
         return id;
     }
 
     @GetMapping("str1")
-    @ResponseBody
     public String str1(String str1) {
         log.info("str1:{}", str1);
         return str1;
     }
 
     @GetMapping("str2")
-    @ResponseBody
     public String str2(@RequestParam("str2") String str2) {
         log.info("str2:{}", str2);
         return str2;
     }
 
     @GetMapping("str3")
-    @ResponseBody
     public String str3(@RequestParam(value = "str3", required = false) String str3) {
         log.info("str3:{}", str3);
         return str3;
+    }
+
+    /**
+     * 默认jdk日期格式
+     * http://localhost:9100/param/date?date=Fri, 13 Dec 2019 09:19:10 GMT
+     */
+    @GetMapping("date")
+    public Date date(Date date) {
+        log.info("date:{}", date);
+        return date;
     }
 }
