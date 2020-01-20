@@ -1,5 +1,6 @@
 package cn.netbuffer.springbootdemo.controller;
 
+import cn.netbuffer.springbootdemo.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
@@ -90,9 +91,15 @@ public class ParamController {
      * 测试结果默认接收jdk日期格式,输出的时区为格林尼治，+8个小时为中国时区
      * http://localhost:9100/param/date?date=Fri, 13 Dec 2019 09:19:10 GMT
      */
-    @GetMapping(value = "date",produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
+    @GetMapping(value = "date", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
     public Date date(Date date) {
         log.info("date:{}", date);
         return date;
+    }
+
+    @PostMapping(value = "user", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
+    public User date(@RequestBody User user) {
+        log.info("receive user:{}", user);
+        return user;
     }
 }
