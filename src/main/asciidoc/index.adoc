@@ -1,0 +1,9 @@
+= spring-boot-demo REST Docs
+
+This is an example output for a service running at http://localhost:9100:
+
+.request
+include::{snippets}/api-bean/http-request.adoc[]
+
+.response
+include::{snippets}/api-bean/http-response.adoc[]
