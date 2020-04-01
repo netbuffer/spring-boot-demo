@@ -4,9 +4,11 @@ import cn.netbuffer.springbootdemo.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
+import org.springframework.util.StopWatch;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 @Slf4j
 @RestController
@@ -101,5 +103,19 @@ public class ParamController {
     public User date(@RequestBody User user) {
         log.info("receive user:{}", user);
         return user;
+    }
+
+    @GetMapping(value = "test-stop-watch")
+    public String testStopWatch() throws InterruptedException {
+        StopWatch stopWatch = new StopWatch("test-stop-watch");
+        stopWatch.start("calc1");
+        TimeUnit.SECONDS.sleep((long) (Math.random() * 5));
+        stopWatch.stop();
+        stopWatch.start("calc2");
+        TimeUnit.SECONDS.sleep((long) (Math.random() * 10));
+        stopWatch.stop();
+        String print = stopWatch.prettyPrint();
+        log.info(print);
+        return print;
     }
 }
