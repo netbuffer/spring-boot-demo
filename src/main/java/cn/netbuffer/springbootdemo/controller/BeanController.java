@@ -1,8 +1,6 @@
 package cn.netbuffer.springbootdemo.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.core.io.support.ResourcePatternResolver;
@@ -27,8 +25,6 @@ import java.util.Map;
 @RequestMapping("/bean")
 public class BeanController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(BeanController.class);
-
     @Resource
     private ApplicationContext applicationContext;
     @Resource
@@ -37,7 +33,7 @@ public class BeanController {
     @GetMapping(value = {"count"})
     public Integer getBeanDefinitionCount() {
         Integer count = applicationContext.getBeanDefinitionCount();
-        LOGGER.info("getBeanDefinitionCount:{}", count);
+        log.info("getBeanDefinitionCount:{}", count);
         return count;
     }
 
