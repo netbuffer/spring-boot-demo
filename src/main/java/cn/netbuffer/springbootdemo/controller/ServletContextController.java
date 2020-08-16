@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
 
 @Slf4j
 @RestController
@@ -29,6 +30,11 @@ public class ServletContextController {
     @GetMapping("virtual-server-name")
     public String getVirtualServerName() {
         return servletContext.getVirtualServerName();
+    }
+
+    @GetMapping("session-timeout")
+    public int getSessionTimeout(HttpSession httpSession) {
+        return httpSession.getMaxInactiveInterval();
     }
 
 }

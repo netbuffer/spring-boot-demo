@@ -1,5 +1,9 @@
 server:
   port: 9100
+  servlet:
+    session:
+      timeout: 30m
+
 req:
   mapping:
     user: user
