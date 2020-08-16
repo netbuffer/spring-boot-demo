@@ -3,15 +3,24 @@
 * spring-boot 2.0
 * https://shields.io/
 * https://docs.spring.io/spring-restdocs/docs/2.0.4.RELEASE/reference/html5/
-* https://github.com/netbuffer/spring-boot-demo
+* [github source](https://github.com/netbuffer/spring-boot-demo)
+* [gitee source](https://gitee.com/netbuffer/spring-boot-demo)
 
-# mvn打包测试 
-> `mvn -Dmvn-arg=自定义 -DskipTests clean package -P test`  
--D设置自定义参数,-P设置使用的profile
+#### server.servlet.session.timeout
+```html
+ns for nanoseconds
+us for microseconds
+ms for milliseconds
+s for seconds
+m for minutes
+h for hours
+d for days
+```
 
-# maven-help-plugin使用
+# mvn build test
+> `mvn -Dmvn-arg=your param -DskipTests clean package -P test`  
+-Dparam,-Pyour profile
+
+# maven-help-plugin use
 * `mvn help:system` Displays a list of the platform details like system properties and environment variables
 * `mvn help:help` Display help information on maven-help-plugin.Call mvn help:help -Ddetail=true -Dgoal=<goal-name> to display parameter details
-
-# 微信扫码使用gitee工具
-![gitee工具](https://s1.ax1x.com/2018/08/10/P60MMF.jpg)
