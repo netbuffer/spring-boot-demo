@@ -4,6 +4,7 @@
 * https://shields.io/
 * [github source](https://github.com/netbuffer/spring-boot-demo)
 * [gitee source](https://gitee.com/netbuffer/spring-boot-demo)
+* [javamelody](https://github.com/javamelody/javamelody/wiki/SpringBootStarter)
 
 #### server.servlet.session.timeout
 ```html
