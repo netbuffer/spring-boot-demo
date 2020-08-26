@@ -23,3 +23,10 @@ d for days
 # maven-help-plugin use
 * `mvn help:system` Displays a list of the platform details like system properties and environment variables
 * `mvn help:help` Display help information on maven-help-plugin.Call mvn help:help -Ddetail=true -Dgoal=<goal-name> to display parameter details
+
+# branch
+* javamelody
+* spring-restdocs
+* spring-security-test
+* templating-maven-plugin
+* thymeleaf
