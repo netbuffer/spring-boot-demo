@@ -4,6 +4,15 @@ server:
     session:
       timeout: 30m
 
+spring:
+  task:
+    execution:
+      pool:
+        core-size: 4
+        queue-capacity: 20
+        max-size: 10
+        keep-alive: "30s"
+
 req:
   mapping:
     user: user
