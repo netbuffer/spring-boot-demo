@@ -8,6 +8,7 @@ import org.springframework.util.StopWatch;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
@@ -23,6 +24,8 @@ public class ParamController {
     private int randomInt3;
     @Value("${var.random-value}")
     private String randomValue;
+    @Value("#{'${var.list}'.split(',')}")
+    private List<String> varList;
 
     @GetMapping("random-var")
     public Object getRandomVars(String r) {
@@ -56,6 +59,12 @@ public class ParamController {
     public long get(long id) {
         log.info("id:{}", id);
         return id;
+    }
+
+    @GetMapping("var-list")
+    public List<String> getVarList() {
+        log.info("id:{}", varList);
+        return varList;
     }
 
     @GetMapping("long")
