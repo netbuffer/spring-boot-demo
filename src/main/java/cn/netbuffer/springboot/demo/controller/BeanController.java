@@ -1,5 +1,6 @@
 package cn.netbuffer.springboot.demo.controller;
 
+import cn.netbuffer.springboot.demo.component.INameComponent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.io.ResourceLoader;
@@ -29,6 +30,8 @@ public class BeanController {
     private ApplicationContext applicationContext;
     @Resource
     private ResourceLoader resourceLoader;
+    @Resource
+    private INameComponent nameComponent;
 
     @GetMapping(value = {"count"})
     public Integer getBeanDefinitionCount() {
@@ -68,6 +71,11 @@ public class BeanController {
         data.put("name", "test");
         data.put("age", "30");
         return data;
+    }
+
+    @GetMapping("nameComponent")
+    public String nameComponent() {
+        return nameComponent.name();
     }
 
 }
