@@ -1,4 +1,4 @@
-package cn.netbuffer.springbootdemo;
+package cn.netbuffer.springboot.demo;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;

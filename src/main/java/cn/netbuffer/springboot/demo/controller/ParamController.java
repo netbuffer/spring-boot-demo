@@ -1,6 +1,6 @@
-package cn.netbuffer.springbootdemo.controller;
+package cn.netbuffer.springboot.demo.controller;
 
-import cn.netbuffer.springbootdemo.User;
+import cn.netbuffer.springboot.demo.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;

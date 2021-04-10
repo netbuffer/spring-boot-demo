@@ -1,4 +1,4 @@
-package cn.netbuffer.springbootdemo.converter;
+package cn.netbuffer.springboot.demo.converter;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;

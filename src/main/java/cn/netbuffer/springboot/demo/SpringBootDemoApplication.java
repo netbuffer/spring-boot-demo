@@ -1,4 +1,4 @@
-package cn.netbuffer.springbootdemo;
+package cn.netbuffer.springboot.demo;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;

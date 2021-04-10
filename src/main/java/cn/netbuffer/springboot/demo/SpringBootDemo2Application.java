@@ -1,4 +1,4 @@
-package cn.netbuffer.springbootdemo;
+package cn.netbuffer.springboot.demo;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;

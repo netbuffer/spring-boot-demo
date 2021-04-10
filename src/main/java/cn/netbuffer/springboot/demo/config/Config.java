@@ -1,4 +1,4 @@
-package cn.netbuffer.springbootdemo.config;
+package cn.netbuffer.springboot.demo.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;

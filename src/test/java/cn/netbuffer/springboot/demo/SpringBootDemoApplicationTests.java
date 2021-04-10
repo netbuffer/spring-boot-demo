@@ -1,4 +1,4 @@
-package cn.netbuffer.springbootdemo;
+package cn.netbuffer.springboot.demo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

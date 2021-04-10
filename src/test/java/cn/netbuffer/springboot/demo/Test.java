@@ -1,4 +1,4 @@
-package cn.netbuffer.springbootdemo;
+package cn.netbuffer.springboot.demo;
 
 public class Test {
 

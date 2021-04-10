@@ -1,4 +1,4 @@
-package cn.netbuffer.springbootdemo.config;
+package cn.netbuffer.springboot.demo.config;
 
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;
 import org.springframework.context.annotation.Configuration;

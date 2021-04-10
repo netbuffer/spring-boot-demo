@@ -1,4 +1,4 @@
-package cn.netbuffer.springbootdemo.config;
+package cn.netbuffer.springboot.demo.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.aop.interceptor.AsyncUncaughtExceptionHandler;

@@ -147,7 +147,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>cn.netbuffer.springbootdemo.SpringBootDemoApplication</mainClass>
+                    <mainClass>cn.netbuffer.springboot.demo.SpringBootDemoApplication</mainClass>
                 </configuration>
             </plugin>
             <plugin>
