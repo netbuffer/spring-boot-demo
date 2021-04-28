@@ -1,5 +1,5 @@
 # spring-boot-demo
-![](https://img.shields.io/badge/springboot-2.1.13.RELEASE-blue.svg?color=blue&message=) ![](https://img.shields.io/badge/springrestdocs-2.0.4.RELEASE-blue.svg?color=blue&message=)
+![](https://img.shields.io/badge/springboot-2.4.5.RELEASE-blue.svg?color=blue&message=) ![](https://img.shields.io/badge/springrestdocs-2.0.4.RELEASE-blue.svg?color=blue&message=)
 * spring-boot 2.0
 * https://shields.io/
 * [github source](https://github.com/netbuffer/spring-boot-demo)
