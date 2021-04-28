@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.util.StopWatch;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.ContentCachingRequestWrapper;
+import org.springframework.web.util.WebUtils;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -109,8 +112,11 @@ public class ParamController {
     }
 
     @PostMapping(value = "user", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
-    public User date(@RequestBody User user) {
+    public User user(@RequestBody User user,HttpServletRequest httpServletRequest) {
         log.info("receive user:{}", user);
+        ContentCachingRequestWrapper contentCachingRequestWrapper=WebUtils.getNativeRequest(httpServletRequest, ContentCachingRequestWrapper.class);
+        //重复读取http body
+        log.debug("http request body:{}", new String(contentCachingRequestWrapper.getContentAsByteArray()));
         return user;
     }
 
