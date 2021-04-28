@@ -3,8 +3,12 @@ server:
   servlet:
     session:
       timeout: 30m
+  # 开启优雅停机
+  shutdown: graceful
 
 spring:
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
   task:
     execution:
       pool:

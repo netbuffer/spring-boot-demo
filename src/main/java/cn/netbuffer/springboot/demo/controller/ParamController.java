@@ -133,4 +133,16 @@ public class ParamController {
         log.info(print);
         return print;
     }
+
+    @GetMapping(value = "task")
+    public String task(@RequestParam(value = "time", defaultValue = "10") Integer time) {
+        log.debug("start task");
+        try {
+            TimeUnit.SECONDS.sleep(time);
+        } catch (InterruptedException e) {
+            log.error("task interrupt");
+        }
+        log.debug("end task");
+        return "ok";
+    }
 }
