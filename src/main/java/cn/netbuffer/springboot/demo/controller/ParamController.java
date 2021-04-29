@@ -29,6 +29,8 @@ public class ParamController {
     private String randomValue;
     @Value("#{'${var.list}'.split(',')}")
     private List<String> varList;
+    @Value("${var.map.name}")
+    private String mapValue;
 
     @GetMapping("random-var")
     public Object getRandomVars(String r) {
@@ -145,4 +147,10 @@ public class ParamController {
         log.debug("end task");
         return "ok";
     }
+
+    @GetMapping("mapValue")
+    public Object mapValue() {
+        return mapValue;
+    }
+
 }

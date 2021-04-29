@@ -26,6 +26,7 @@ var:
   random-int3: ${random.int(1,10)}
   random-value: ${random.value}
   list: 1,2,3
+  map: {name: admin,age: 30}
 
 logging:
   level:
