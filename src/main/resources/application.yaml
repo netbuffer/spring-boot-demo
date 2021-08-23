@@ -20,13 +20,23 @@ spring:
     name: spring-boot-demo
     # 在actuator监控中,当属性名中包含：password、secret、key这些敏感词,在返回它们的时候会使用*来掩码
     key: test-actuator
+
 management:
+  info:
+    git:
+      mode: full
+  health:
+    defaults:
+      enabled: true
   endpoints:
     web:
       exposure:
         # 开启actuator所有监控端点
         include: "*"
     enabled-by-default: true
+  endpoint:
+    health:
+      show-details: always
 
 req:
   mapping:
