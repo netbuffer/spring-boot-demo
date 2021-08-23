@@ -16,6 +16,17 @@ spring:
         queue-capacity: 20
         max-size: 10
         keep-alive: "30s"
+  application:
+    name: spring-boot-demo
+    # 在actuator监控中,当属性名中包含：password、secret、key这些敏感词,在返回它们的时候会使用*来掩码
+    key: test-actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        # 开启actuator所有监控端点
+        include: "*"
+    enabled-by-default: true
 
 req:
   mapping:
@@ -33,6 +44,9 @@ logging:
     root: WARN
     org:
       springframework:
-        web: INFO
+        web: info
     cn:
       netbuffer: DEBUG
+info:
+  app:
+    name: test-info-api
