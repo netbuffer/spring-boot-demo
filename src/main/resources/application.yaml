@@ -5,6 +5,8 @@ server:
       timeout: 30m
   # 开启优雅停机
   shutdown: graceful
+  http2:
+    enabled: true
 
 spring:
   lifecycle:
