@@ -6,6 +6,8 @@ import org.springframework.scheduling.annotation.AsyncConfigurer;
 
 @Configuration
 public class SbdAsyncConfigurer implements AsyncConfigurer {
+
+    @Override
     public AsyncUncaughtExceptionHandler getAsyncUncaughtExceptionHandler() {
         return new AsyncExceptionHandler();
     }
