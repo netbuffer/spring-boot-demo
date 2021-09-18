@@ -1,5 +1,8 @@
 # spring-boot-demo
-![](https://img.shields.io/badge/springboot-2.4.5.RELEASE-blue.svg?color=blue&message=) ![](https://img.shields.io/badge/springrestdocs-2.0.4.RELEASE-blue.svg?color=blue&message=)
+![](https://img.shields.io/static/v1?label=java&message=1.8&color=blue)
+![](https://img.shields.io/static/v1?label=spring-boot&message=2.4.5.RELEASE&color=blue)
+![](https://img.shields.io/static/v1?label=spring-restdocs&message=2.0.4.RELEASE&color=blue)
+![](https://img.shields.io/static/v1?label=junit&message=4.13.2&color=black)
 * use spring-boot 2.x
 * https://shields.io/
 * [github source](https://github.com/netbuffer/spring-boot-demo)
