@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="5 minutes">
+
+    <springProperty scope="context" name="rootLogLevel" source="logging.level.root"/>
+
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <withJansi>true</withJansi>
+        <encoder>
+            <pattern>
+                %highlight(%date{yyyy-MM-dd HH:mm:ss.SSS}) %cyan([%thread]) %yellow(%-5level) %green(%logger{36}).%gray(%M)-%boldMagenta(%line) - %blue(%msg%n)
+            </pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.springframework.web" level="INFO"/>
+    <logger name="org.springframework.transaction" level="TRACE"/>
+    <logger name="org.springframework" level="WARN"/>
+    <logger name="cn.netbuffer" level="DEBUG"/>
+
+    <root>
+        <level value="${rootLogLevel}"/>
+        <appender-ref ref="stdout"/>
+    </root>
+
+</configuration>

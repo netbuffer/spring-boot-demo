@@ -52,13 +52,10 @@ var:
   map: {name: admin,age: 30}
 
 logging:
+  config: classpath:logback-sbd.xml
   level:
     root: WARN
-    org:
-      springframework:
-        web: info
-    cn:
-      netbuffer: DEBUG
+
 info:
   app:
     name: test-info-api
