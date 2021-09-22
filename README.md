@@ -8,6 +8,9 @@
 * [github source](https://github.com/netbuffer/spring-boot-demo)
 * [gitee source](https://gitee.com/netbuffer/spring-boot-demo)
 * /actuator/health
+* [@ControllerAdvice](https://docs.spring.io/spring-framework/docs/5.3.6/reference/html/web.html#mvc-ann-controller-advice)
+* [Exceptions Process](https://docs.spring.io/spring-framework/docs/5.3.6/reference/html/web.html#mvc-ann-exceptionhandler)
+* [ResponseEntityExceptionHandler](https://docs.spring.io/spring-framework/docs/5.3.6/javadoc-api/org/springframework/web/servlet/mvc/method/annotation/ResponseEntityExceptionHandler.html)
 
 ### server.servlet.session.timeout
 ```html
