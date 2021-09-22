@@ -2,12 +2,13 @@
 <configuration scan="true" scanPeriod="5 minutes">
 
     <springProperty scope="context" name="rootLogLevel" source="logging.level.root"/>
+    <springProperty scope="context" name="appName" source="spring.application.name"/>
 
     <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
         <withJansi>true</withJansi>
         <encoder>
             <pattern>
-                %highlight(%date{yyyy-MM-dd HH:mm:ss.SSS}) %cyan([%thread]) %yellow(%-5level) %green(%logger{36}).%gray(%M)-%boldMagenta(%line) - %blue(%msg%n)
+                ${appName} %highlight(%date{yyyy-MM-dd HH:mm:ss.SSS}) %cyan([%thread]) %yellow(%-5level) %green(%logger{36}).%gray(%M)-%boldMagenta(%line) - %blue(%msg%n)
             </pattern>
         </encoder>
     </appender>
