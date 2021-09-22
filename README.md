@@ -34,3 +34,4 @@ d for days
 * spring-security-test
 * templating-maven-plugin
 * thymeleaf
+* logback
