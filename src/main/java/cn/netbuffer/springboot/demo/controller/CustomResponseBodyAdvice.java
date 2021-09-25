@@ -7,6 +7,7 @@ import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
+import java.util.Map;
 
 @Slf4j
 @ControllerAdvice
@@ -14,6 +15,8 @@ public class CustomResponseBodyAdvice implements ResponseBodyAdvice {
 
     @Override
     public boolean supports(MethodParameter methodParameter, Class aClass) {
+        Class targetClass = methodParameter.getMethod().getDeclaringClass();
+        log.debug("supports execute methodParameter={} targetClass={} class={}", methodParameter, targetClass, aClass);
         return true;
     }
 
@@ -23,7 +26,14 @@ public class CustomResponseBodyAdvice implements ResponseBodyAdvice {
         if (serverHttpRequest.getURI().getPath().equals("/ua")) {
             serverHttpResponse.getHeaders().set("x-abc", "header-value");
         }
-        return data;
+        if (data instanceof String) {
+            return "[" + data + "]";
+        } else if (data instanceof Map) {
+            ((Map) data).put("extData", "value");
+            return data;
+        } else {
+            return data;
+        }
     }
 
 }
