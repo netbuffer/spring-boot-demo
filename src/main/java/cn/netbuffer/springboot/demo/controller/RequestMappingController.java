@@ -3,10 +3,14 @@ package cn.netbuffer.springboot.demo.controller;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 @Slf4j
@@ -19,7 +23,19 @@ public class RequestMappingController {
     @Resource
     private ApplicationContext applicationContext;
 
-    @GetMapping
+    /**
+     *
+     * @return
+     */
+    @RequestMapping("api/**")
+    public Object api() {
+        ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        HttpServletRequest httpServletRequest = servletRequestAttributes.getRequest();
+        HttpServletResponse httpServletResponse = servletRequestAttributes.getResponse();
+        return httpServletRequest.getRequestURI();
+    }
+
+    @GetMapping("allMapping")
     public void allMapping() {
         Map<RequestMappingInfo, HandlerMethod> mappings = requestMappingHandlerMapping.getHandlerMethods();
         log.debug("mappings size:{}", mappings.size());
@@ -29,6 +45,12 @@ public class RequestMappingController {
         }
     }
 
+    /**
+     * 动态注册路径映射
+     *
+     * @param data
+     * @return
+     */
     @PostMapping("registerMapping")
     public RequestMappingInfo registerMapping(@RequestBody Map data) {
         RequestMappingInfo mappingInfo = RequestMappingInfo.paths(data.get("path").toString()).build();
@@ -41,6 +63,12 @@ public class RequestMappingController {
         return mappingInfo;
     }
 
+    /**
+     * 动态删除路径映射
+     *
+     * @param data
+     * @return
+     */
     @PostMapping("unregisterMapping")
     public RequestMappingInfo unregisterMapping(@RequestBody Map data) {
         RequestMappingInfo mappingInfo = RequestMappingInfo.paths(data.get("path").toString()).build();
