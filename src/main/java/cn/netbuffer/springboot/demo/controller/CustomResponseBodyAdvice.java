@@ -10,7 +10,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 import java.util.Map;
 
 @Slf4j
-@ControllerAdvice
+//@ControllerAdvice
 public class CustomResponseBodyAdvice implements ResponseBodyAdvice {
 
     @Override
