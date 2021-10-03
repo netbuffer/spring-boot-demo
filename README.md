@@ -46,3 +46,4 @@ d for days
 * [关于spring-boot中logback日志配置引用spring环境变量的使用方式](https://www.toutiao.com/i7014368145578230304)
 * [spring-boot生成打包信息](https://www.toutiao.com/i7013891369404351014)
 * [spring-boot生成git版本库信息](https://www.toutiao.com/i7013890854121226789)
+* [Spring Boot动态注册/删除http资源路径的方法](https://www.toutiao.com/i7014752212727431694)
