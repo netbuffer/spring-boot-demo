@@ -47,3 +47,4 @@ d for days
 * [spring-boot生成打包信息](https://www.toutiao.com/i7013891369404351014)
 * [spring-boot生成git版本库信息](https://www.toutiao.com/i7013890854121226789)
 * [Spring Boot动态注册/删除http资源路径的方法](https://www.toutiao.com/i7014752212727431694)
+* [获取SpringBoot工程运行时的操作系统进程ID方法](https://www.toutiao.com/i7015456367477522977)
