@@ -54,6 +54,7 @@ var:
 logging:
   level:
     root: WARN
+    web: debug
     org:
       springframework:
         web: info
