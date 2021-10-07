@@ -153,4 +153,12 @@ public class ParamController {
         return mapValue;
     }
 
+    @Value("${data.name:null}")
+    private String dataName;
+
+    @GetMapping("dataName")
+    public Object dataName() {
+        return dataName;
+    }
+
 }
