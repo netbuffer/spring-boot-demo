@@ -62,3 +62,6 @@ logging:
 info:
   app:
     name: test-info-api
+
+# 输出更多日志信息（embedded container, Hibernate, and Spring Boot）
+debug: false
