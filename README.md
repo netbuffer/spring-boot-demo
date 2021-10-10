@@ -35,7 +35,6 @@ d for days
 ### branch
 * javamelody
 * spring-restdocs
-* spring-security-test
 * templating-maven-plugin
 * thymeleaf
 * logback
@@ -48,3 +47,5 @@ d for days
 * [spring-boot生成git版本库信息](https://www.toutiao.com/i7013890854121226789)
 * [Spring Boot动态注册/删除http资源路径的方法](https://www.toutiao.com/i7014752212727431694)
 * [获取SpringBoot工程运行时的操作系统进程ID方法](https://www.toutiao.com/i7015456367477522977)
+* [SpringBoot使用基于json格式的配置方法](https://www.toutiao.com/i7016209186543469069)
+* [怎么查看SpringBoot工程中每个过滤器的执行顺序](https://www.toutiao.com/i7016666337527382532)
