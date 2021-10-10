@@ -153,4 +153,10 @@ public class ParamController {
         return mapValue;
     }
 
+    @GetMapping("log")
+    public void log() {
+        log.debug("debug level log");
+        log.info("info level log");
+    }
+
 }

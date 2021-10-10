@@ -9,6 +9,8 @@ server:
     enabled: true
 
 spring:
+  profiles:
+    active: test
   lifecycle:
     timeout-per-shutdown-phase: 30s
   task:

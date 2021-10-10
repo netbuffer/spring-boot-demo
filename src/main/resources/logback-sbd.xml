@@ -13,10 +13,17 @@
         </encoder>
     </appender>
 
+    <springProfile name="dev">
+        <logger name="cn.netbuffer" level="DEBUG"/>
+    </springProfile>
+
+    <springProfile name="test">
+        <logger name="cn.netbuffer" level="INFO"/>
+    </springProfile>
+
     <logger name="org.springframework.web" level="INFO"/>
     <logger name="org.springframework.transaction" level="TRACE"/>
     <logger name="org.springframework" level="WARN"/>
-    <logger name="cn.netbuffer" level="DEBUG"/>
 
     <root>
         <level value="${rootLogLevel}"/>
