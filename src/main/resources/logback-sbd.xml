@@ -13,10 +13,12 @@
         </encoder>
     </appender>
 
+    <!--针对dev环境下的日志配置-->
     <springProfile name="dev">
         <logger name="cn.netbuffer" level="DEBUG"/>
     </springProfile>
 
+    <!--针对test环境下的日志配置-->
     <springProfile name="test">
         <logger name="cn.netbuffer" level="INFO"/>
     </springProfile>
