@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,6 +31,11 @@ public class BeanController {
     private ResourceLoader resourceLoader;
     @Resource
     private INameComponent nameComponent;
+
+    @GetMapping("nameComponent")
+    public String nameComponent() {
+        return nameComponent.name();
+    }
 
     @GetMapping(value = {"count"})
     public Integer getBeanDefinitionCount() {
@@ -71,11 +75,6 @@ public class BeanController {
         data.put("name", "test");
         data.put("age", "30");
         return data;
-    }
-
-    @GetMapping("nameComponent")
-    public String nameComponent() {
-        return nameComponent.name();
     }
 
 }
