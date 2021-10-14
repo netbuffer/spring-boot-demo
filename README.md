@@ -49,3 +49,4 @@ d for days
 * [获取SpringBoot工程运行时的操作系统进程ID方法](https://www.toutiao.com/i7015456367477522977)
 * [SpringBoot使用基于json格式的配置方法](https://www.toutiao.com/i7016209186543469069)
 * [怎么查看SpringBoot工程中每个过滤器的执行顺序](https://www.toutiao.com/i7016666337527382532)
+* [Spring中出现NoUniqueBeanDefinitionException的解决方法](https://www.toutiao.com/i7018897444583113247)
