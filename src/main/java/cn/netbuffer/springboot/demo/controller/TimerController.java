@@ -4,10 +4,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 @Slf4j
 @RestController
@@ -15,17 +15,18 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 public class TimerController {
 
     private Timer timer = new Timer();
-    private TimerTask timerTask = new TimerTask() {
-        @Override
-        public void run() {
-            log.debug("TimerTask schedule");
-        }
-    };
-    private ScheduledExecutorService scheduledExecutorService = new ScheduledThreadPoolExecutor(1);
+    private Map<String, TimerTask> tasks = new HashMap<>();
 
     @GetMapping("schedule")
-    public void schedule() {
+    public void schedule(String task) {
         //timer cancel后，无法再继续调度任务 timerTask实例被cancel后，也无法再继续调度任务
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                log.debug("TimerTask[{}] execute", task);
+            }
+        };
+        tasks.put(task, timerTask);
         timer.schedule(timerTask, 1000, 5000);
     }
 
@@ -36,8 +37,11 @@ public class TimerController {
     }
 
     @GetMapping("timerTask/cancel")
-    public boolean timerTaskCancel() {
-        return timerTask.cancel();
+    public boolean timerTaskCancel(String task) {
+        TimerTask timerTask = tasks.get(task);
+        boolean result = timerTask.cancel();
+        log.debug("cancel TimerTask[{}]:{}", task, result);
+        return result;
     }
 
 }
