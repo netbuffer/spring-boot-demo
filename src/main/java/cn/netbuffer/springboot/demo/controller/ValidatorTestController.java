@@ -39,6 +39,13 @@ public class ValidatorTestController {
         return constraintViolations.size() > 0 ? false : true;
     }
 
+    @GetMapping("validateProperty")
+    public boolean validateProperty(User user) {
+        Set<ConstraintViolation<User>> constraintViolations = validator.validateProperty(user, "name");
+        log.debug("validate user[name] property result={}", constraintViolations);
+        return constraintViolations.size() > 0 ? false : true;
+    }
+
     @GetMapping("user")
     public @Valid User user(@Valid User user) {
         return user;
