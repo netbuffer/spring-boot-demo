@@ -3,6 +3,7 @@
 ![](https://img.shields.io/static/v1?label=spring-boot&message=2.4.5.RELEASE&color=blue)
 ![](https://img.shields.io/static/v1?label=spring-restdocs&message=2.0.4.RELEASE&color=blue)
 ![](https://img.shields.io/static/v1?label=junit&message=4.13.2&color=black)
+![](https://img.shields.io/static/v1?label=hibernate-validator&message=6.1.7.Final&color=blue)
 * use spring-boot 2.x
 * https://shields.io/
 * [github source](https://github.com/netbuffer/spring-boot-demo)
@@ -12,6 +13,7 @@
 * [Exceptions Process](https://docs.spring.io/spring-framework/docs/5.3.6/reference/html/web.html#mvc-ann-exceptionhandler)
 * [ResponseEntityExceptionHandler](https://docs.spring.io/spring-framework/docs/5.3.6/javadoc-api/org/springframework/web/servlet/mvc/method/annotation/ResponseEntityExceptionHandler.html)
 * [requestmapping](https://docs.spring.io/spring-framework/docs/5.3.6/reference/html/web.html#mvc-ann-requestmapping-registration)
+* [hibernate_validator_reference](https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/pdf/hibernate_validator_reference.pdf#validator-gettingstarted)
 
 ### server.servlet.session.timeout
 ```html
