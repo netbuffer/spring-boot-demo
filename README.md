@@ -41,6 +41,13 @@ d for days
 * thymeleaf
 * logback
 
+### docker镜像制作
+#### 构建
+1. 先通过maven打包到target目录下
+2. 执行构建指令：docker build -t netbuffer/spring-boot-demo:1.0 .
+#### 运行
+* docker run --rm -it -p 9100:9100 netbuffer/spring-boot-demo:1.0
+
 ### articles
 * [spring-boot中统一修改http响应体内容的方法](https://www.toutiao.com/i7014375995448820231)
 * [spring-boot中异常的处理](https://www.toutiao.com/i7014369292791579148)
