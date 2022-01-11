@@ -42,11 +42,26 @@ d for days
 * logback
 
 ### docker镜像制作
+
 #### 构建
 1. 先通过maven打包到target目录下
 2. 执行构建指令：docker build -t netbuffer/spring-boot-demo:1.0 .
+
 #### 运行
 * docker run --rm -it -p 9100:9100 netbuffer/spring-boot-demo:1.0
+
+#### 发布到DockerHub
+> 需要注册DockerHub身份，再docker login登录对应的Registry
+1. docker images 找到镜像ID
+2. docker tag 镜像ID 你的DockerHub账户名/spring-boot-demo:1.0 打tag
+3. docker push 你的DockerHub账户名/spring-boot-demo:1.0 推送到远程
+
+#### 远程镜像
+> 已发布到DockerHub，可以直接运行以下指令测试  
+https://hub.docker.com/r/javawiki/spring-boot-demo  
+
+* docker pull javawiki/spring-boot-demo:1.0          拉取远程镜像
+* docker run -it --rm javawiki/spring-boot-demo:1.0  运行远程镜像
 
 ### articles
 * [spring-boot中统一修改http响应体内容的方法](https://www.toutiao.com/i7014375995448820231)
