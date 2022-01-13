@@ -14,6 +14,8 @@
 * [ResponseEntityExceptionHandler](https://docs.spring.io/spring-framework/docs/5.3.6/javadoc-api/org/springframework/web/servlet/mvc/method/annotation/ResponseEntityExceptionHandler.html)
 * [requestmapping](https://docs.spring.io/spring-framework/docs/5.3.6/reference/html/web.html#mvc-ann-requestmapping-registration)
 * [hibernate_validator_reference](https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/pdf/hibernate_validator_reference.pdf#validator-gettingstarted)
+* https://docs.docker.com/compose/compose-file/compose-file-v3/#build
+
 
 ### server.servlet.session.timeout
 ```html
@@ -49,6 +51,7 @@ d for days
 
 #### 运行
 * docker run --rm -it -p 9100:9100 netbuffer/spring-boot-demo:1.0
+* docker-compose up (使用docker-compose启动服务)
 
 #### 发布到DockerHub
 > 需要注册DockerHub身份，再docker login登录对应的Registry
