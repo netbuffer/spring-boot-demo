@@ -47,7 +47,7 @@ d for days
 
 #### 构建
 1. 先通过maven打包到target目录下
-2. 执行构建指令：docker build -t netbuffer/spring-boot-demo:1.0 .
+2. 执行构建指令：`cd target;docker build -f ../Dockerfile -t netbuffer/spring-boot-demo:1.0 ../` (`docker build -t netbuffer/spring-boot-demo:1.0 .`) 
 
 #### 运行
 * docker run --rm -it -p 9100:9100 netbuffer/spring-boot-demo:1.0
