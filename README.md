@@ -14,6 +14,7 @@
 * [ResponseEntityExceptionHandler](https://docs.spring.io/spring-framework/docs/5.3.6/javadoc-api/org/springframework/web/servlet/mvc/method/annotation/ResponseEntityExceptionHandler.html)
 * [requestmapping](https://docs.spring.io/spring-framework/docs/5.3.6/reference/html/web.html#mvc-ann-requestmapping-registration)
 * [hibernate_validator_reference](https://docs.jboss.org/hibernate/validator/6.2/reference/en-US/pdf/hibernate_validator_reference.pdf#validator-gettingstarted)
+* https://hub.docker.com/_/openjdk
 
 ### server.servlet.session.timeout
 ```html
