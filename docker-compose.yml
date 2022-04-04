@@ -1,0 +1,16 @@
+version: "3.9"
+# 定义服务
+services:
+  spring-boot-demo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      labels:
+        cn.netbuffer.springboot.demo.description: "spring-boot-demo webapp"
+        cn.netbuffer.springboot.demo.author: "netbuffer"
+        cn.netbuffer.springboot.demo.label-with-empty-value: ""
+    image: netbuffer/spring-boot-demo:1.0
+    ports:
+      - "9100:9100"
+    container_name: spring-boot-demo-container
+    restart: "no"
