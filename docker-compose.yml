@@ -12,5 +12,13 @@ services:
     image: netbuffer/spring-boot-demo:1.0
     ports:
       - "9100:9100"
+    mem_swappiness: 70
+    memswap_limit: -1
+    deploy:
+      resources:
+        limits:
+          memory: 4g
+    environment:
+      JAVA_OPTS: -Xms4g -Xmx8g
     container_name: spring-boot-demo-container
     restart: "no"
