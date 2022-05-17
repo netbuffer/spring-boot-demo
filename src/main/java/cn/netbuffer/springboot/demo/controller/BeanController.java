@@ -32,6 +32,8 @@ public class BeanController {
     @Resource
     private INameComponent nameComponent;
 
+    private static final Map memoryAlloc = new HashMap();
+
     @GetMapping("nameComponent")
     public String nameComponent() {
         return nameComponent.name();
@@ -75,6 +77,24 @@ public class BeanController {
         data.put("name", "test");
         data.put("age", "30");
         return data;
+    }
+
+    @GetMapping(value = {"memory_alloc"})
+    public int memoryAlloc(int gb) {
+        for (int i = 0; i < gb; i++) {
+            memoryAlloc.put(String.valueOf(i), new byte[1024 * 1024 * 1024]);
+        }
+        log.debug("memory alloc gb={}",gb);
+        return memoryAlloc.size();
+    }
+
+    @GetMapping(value = {"memory_release"})
+    public int memoryRelease(int gb) {
+        for (int i = 0; i < gb; i++) {
+            memoryAlloc.remove(String.valueOf(i));
+        }
+        log.debug("memory release gb={}",gb);
+        return memoryAlloc.size();
     }
 
 }
