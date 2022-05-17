@@ -14,6 +14,7 @@ services:
       - "9100:9100"
     mem_swappiness: 70
     memswap_limit: -1
+    oom_kill_disable: true
     deploy:
       resources:
         limits:
