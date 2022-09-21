@@ -1,0 +1,6 @@
+### bean/nameComponent
+GET http://localhost:9100/bean/nameComponent
+
+### bean/names/path
+GET http://localhost:9100/bean/names/path?path=cn/netbuffer/springboot/demo
+
