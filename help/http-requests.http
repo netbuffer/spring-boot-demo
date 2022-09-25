@@ -4,3 +4,12 @@ GET http://localhost:9100/bean/nameComponent
 ### bean/names/path
 GET http://localhost:9100/bean/names/path?path=cn/netbuffer/springboot/demo
 
+### async task with error
+GET http://localhost:9100/async/error
+
+### async sleeptask with 3 seconds
+GET http://localhost:9100/async/sleeptask?sleep=3
+
+### async dotask
+GET http://localhost:9100/async/dotask?sleep=3
+
