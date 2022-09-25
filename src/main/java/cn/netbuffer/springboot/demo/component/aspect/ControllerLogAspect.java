@@ -1,5 +1,7 @@
-package cn.netbuffer.springboot.demo.component;
+package cn.netbuffer.springboot.demo.component.aspect;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
@@ -12,14 +14,17 @@ import org.springframework.util.StopWatch;
 @Slf4j
 @Aspect
 @Component
-public class NameComponentLogAspect {
+public class ControllerLogAspect {
 
-    @Pointcut("execution (* cn.netbuffer.springboot.demo.component.INameComponent.name(..))")
+    private ObjectMapper objectMapper = new ObjectMapper();
+
+    @Pointcut("execution (* cn.netbuffer.springboot.demo.controller.*.*(..))")
     public void pointCut() {
     }
 
     @Around("pointCut()")
     public Object around(ProceedingJoinPoint point) {
+        log.debug("around point={}", point);
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
         Object result = null;
@@ -30,7 +35,13 @@ public class NameComponentLogAspect {
         }
         stopWatch.stop();
         Signature signature = point.getSignature();
+        log.debug("signature.getName()={} signature.getDeclaringTypeName()={}", signature.getName(), signature.getDeclaringTypeName());
         log.debug("invoke[{}] with args[{}] return [{}] cost\n{}", signature, point.getArgs(), result, stopWatch.prettyPrint());
+        try {
+            log.debug("to json args={} result={}", objectMapper.writeValueAsString(point.getArgs()), objectMapper.writeValueAsString(result));
+        } catch (JsonProcessingException e) {
+            log.error("process args to json error");
+        }
         return result;
     }
 
