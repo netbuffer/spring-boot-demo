@@ -8,6 +8,8 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StopWatch;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Aspect
@@ -30,6 +32,10 @@ public class NameComponentLogAspect {
         }
         stopWatch.stop();
         Signature signature = point.getSignature();
+        String declaringTypeName = signature.getDeclaringTypeName();
+        Class target = signature.getDeclaringType();
+        String annotations = Arrays.stream(target.getAnnotations()).map(a -> a.annotationType().getSimpleName()).collect(Collectors.joining(","));
+        log.debug("declaringTypeName={} target={} annotations={}", declaringTypeName, target, annotations);
         log.debug("invoke[{}] with args[{}] return [{}] cost\n{}", signature, point.getArgs(), result, stopWatch.prettyPrint());
         return result;
     }
