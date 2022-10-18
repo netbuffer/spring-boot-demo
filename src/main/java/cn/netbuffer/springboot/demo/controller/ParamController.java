@@ -161,4 +161,9 @@ public class ParamController {
         return dataName;
     }
 
+    @GetMapping("defaultValue")
+    public String defaultValue(@RequestParam(defaultValue = "default") String value) {
+        return value;
+    }
+
 }

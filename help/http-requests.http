@@ -16,3 +16,5 @@ GET http://localhost:9100/async/dotask?sleep=3
 ### /retry/test
 GET http://localhost:9100/retry/test
 
+### /param/defaultValue
+GET http://localhost:9100/param/defaultValue
