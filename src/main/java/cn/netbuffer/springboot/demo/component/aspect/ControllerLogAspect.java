@@ -35,7 +35,7 @@ public class ControllerLogAspect {
         }
         stopWatch.stop();
         Signature signature = point.getSignature();
-        log.debug("signature.getName()={} signature.getDeclaringTypeName()={}", signature.getName(), signature.getDeclaringTypeName());
+        log.debug("signature.getName()={} signature.getDeclaringTypeName()={} signature.getDeclaringType().getSimpleName()={}", signature.getName(), signature.getDeclaringTypeName(), signature.getDeclaringType().getSimpleName());
         log.debug("invoke[{}] with args[{}] return [{}] cost\n{}", signature, point.getArgs(), result, stopWatch.prettyPrint());
         try {
             log.debug("to json args={} result={}", objectMapper.writeValueAsString(point.getArgs()), objectMapper.writeValueAsString(result));
