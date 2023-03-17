@@ -18,3 +18,6 @@ GET http://localhost:9100/retry/test
 
 ### /param/defaultValue
 GET http://localhost:9100/param/defaultValue
+
+### /sse/sendById
+GET http://localhost:9100/sse/sendById?id=uitest&message=hello
