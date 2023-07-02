@@ -24,3 +24,9 @@ GET http://localhost:9100/sse/sendById?id=uitest&message=hello
 
 ### /validator/validateUser
 GET http://localhost:9100/validator/validateUser?name=netbuffer&age=32&mobile=13232233345&createTime=1672506061000
+
+### /param/mediatype
+GET http://localhost:9100/param/mediatype?value=<user><name>netbuffer</name></user>&type=xml
+
+### /param/mediatype
+GET http://localhost:9100/param/mediatype?value=hello world&type=text

@@ -3,7 +3,9 @@ package cn.netbuffer.springboot.demo.controller;
 import cn.netbuffer.springboot.demo.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.util.StopWatch;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.ContentCachingRequestWrapper;
@@ -114,9 +116,9 @@ public class ParamController {
     }
 
     @PostMapping(value = "user", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
-    public User user(@RequestBody User user,HttpServletRequest httpServletRequest) {
+    public User user(@RequestBody User user, HttpServletRequest httpServletRequest) {
         log.info("receive user:{}", user);
-        ContentCachingRequestWrapper contentCachingRequestWrapper=WebUtils.getNativeRequest(httpServletRequest, ContentCachingRequestWrapper.class);
+        ContentCachingRequestWrapper contentCachingRequestWrapper = WebUtils.getNativeRequest(httpServletRequest, ContentCachingRequestWrapper.class);
         //重复读取http body
         log.debug("http request body:{}", new String(contentCachingRequestWrapper.getContentAsByteArray()));
         return user;
@@ -164,6 +166,19 @@ public class ParamController {
     @GetMapping("defaultValue")
     public String defaultValue(@RequestParam(defaultValue = "default") String value) {
         return value;
+    }
+
+    @GetMapping("mediatype")
+    public ResponseEntity mediatype(String value, String type) {
+        MediaType mediaType = null;
+        if (type.equalsIgnoreCase("text")) {
+            mediaType = MediaType.TEXT_PLAIN;
+        } else if (type.equalsIgnoreCase("json")) {
+            mediaType = MediaType.APPLICATION_JSON;
+        } else if (type.equalsIgnoreCase("xml")) {
+            mediaType = MediaType.TEXT_XML;
+        }
+        return ResponseEntity.status(HttpStatus.OK).contentType(mediaType).body(value);
     }
 
 }
