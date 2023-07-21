@@ -15,3 +15,10 @@ GET http://localhost:9100/validator/validateValue
 
 ### /validator/user
 GET http://localhost:9100/validator/user?name=a
+
+### /validator/validated/register
+POST http://localhost:9100/validator/validated/register
+Content-Type: application/x-www-form-urlencoded
+
+#username=a&password=bbbbbb
+username=a&password=b
