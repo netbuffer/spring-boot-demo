@@ -1,0 +1,17 @@
+### /validator/getValidatorFactory
+GET http://localhost:9100/validator/getValidatorFactory
+
+### /validator/getValidator
+GET http://localhost:9100/validator/getValidator
+
+### /validator/validateUser
+GET http://localhost:9100/validator/validateUser
+
+### /validator/validateProperty
+GET http://localhost:9100/validator/validateProperty
+
+### /validator/validateValue
+GET http://localhost:9100/validator/validateValue
+
+### /validator/user
+GET http://localhost:9100/validator/user?name=a
