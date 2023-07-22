@@ -22,3 +22,6 @@ Content-Type: application/x-www-form-urlencoded
 
 #username=a&password=bbbbbb
 username=a&password=b
+
+### /validator/validated/calculate
+GET http://localhost:9100/validator/validated/calculate?b1=102.32332&b2=323992323.1234234
