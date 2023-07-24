@@ -51,6 +51,21 @@ public class BeanController {
         return applicationContext.getBeanDefinitionNames();
     }
 
+    @GetMapping(value = {"isSingleton"})
+    public boolean isSingleton(String bean) {
+        return applicationContext.isSingleton(bean);
+    }
+
+    @GetMapping(value = {"isPrototype"})
+    public boolean isPrototype(String bean) {
+        return applicationContext.isPrototype(bean);
+    }
+
+    @GetMapping(value = {"getType"})
+    public Class<?> getType(String bean) {
+        return applicationContext.getType(bean);
+    }
+
     /**
      * get beans in package
      *
@@ -84,7 +99,7 @@ public class BeanController {
         for (int i = 0; i < gb; i++) {
             memoryAlloc.put(String.valueOf(i), new byte[1024 * 1024 * 1024]);
         }
-        log.debug("memory alloc gb={}",gb);
+        log.debug("memory alloc gb={}", gb);
         return memoryAlloc.size();
     }
 
@@ -93,7 +108,7 @@ public class BeanController {
         for (int i = 0; i < gb; i++) {
             memoryAlloc.remove(String.valueOf(i));
         }
-        log.debug("memory release gb={}",gb);
+        log.debug("memory release gb={}", gb);
         return memoryAlloc.size();
     }
 

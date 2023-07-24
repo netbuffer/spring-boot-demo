@@ -4,6 +4,15 @@ GET http://localhost:9100/bean/nameComponent
 ### bean/names/path
 GET http://localhost:9100/bean/names/path?path=cn/netbuffer/springboot/demo
 
+### /bean/isSingleton
+GET http://localhost:9100/bean/isSingleton?bean=beanController
+
+### /bean/isPrototype
+GET http://localhost:9100/bean/isPrototype?bean=beanController
+
+### /bean/getType
+GET http://localhost:9100/bean/getType?bean=beanController
+
 ### async task with error
 GET http://localhost:9100/async/error
 
