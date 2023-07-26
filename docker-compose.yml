@@ -20,6 +20,7 @@ services:
         limits:
           memory: 4g
     environment:
+      TZ: Asia/Shanghai
       JAVA_OPTS: -Xms4g -Xmx8g
     container_name: spring-boot-demo-container
     restart: "no"
