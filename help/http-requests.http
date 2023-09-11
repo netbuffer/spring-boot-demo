@@ -39,3 +39,13 @@ GET http://localhost:9100/param/mediatype?value=<user><name>netbuffer</name></us
 
 ### /param/mediatype
 GET http://localhost:9100/param/mediatype?value=hello world&type=text
+
+### POST /param/user
+POST http://localhost:9100/param/user
+Content-Type: application/json
+
+{
+  "name": "your-name",
+  "password": "your-name",
+  "age": 30
+}
