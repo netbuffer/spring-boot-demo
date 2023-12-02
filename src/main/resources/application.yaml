@@ -24,7 +24,7 @@ spring:
     key: test-actuator
   web:
     resources:
-      static-locations: classpath:/META-INF/resources/, classpath:/resources/, classpath:/static/, classpath:/public/, file:d:/upload
+      static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:d:/upload
 
 management:
   info:

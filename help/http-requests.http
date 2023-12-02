@@ -49,3 +49,9 @@ Content-Type: application/json
   "password": "your-name",
   "age": 30
 }
+
+### /resourceloader/staticpaths
+GET http://localhost:9100/resourceloader/staticpaths
+
+### /resourceloader/staticpaths/physicalpath
+GET http://localhost:9100/resourceloader/staticpaths/physicalpath
