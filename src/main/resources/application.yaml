@@ -69,3 +69,7 @@ info:
 
 # 输出更多日志信息（embedded container, Hibernate, and Spring Boot）
 debug: false
+
+extra-static:
+  file-path1: /home/uploads1/
+  file-path2: /home/uploads2/
