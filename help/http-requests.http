@@ -53,5 +53,8 @@ Content-Type: application/json
 ### /resourceloader/staticpaths
 GET http://localhost:9100/resourceloader/staticpaths
 
-### /resourceloader/staticpaths/physicalpath
-GET http://localhost:9100/resourceloader/staticpaths/physicalpath
+### /param/getRemotePort
+GET http://localhost:9100/param/getRemotePort
+
+### /param/getLocalPort
+GET http://localhost:9100/param/getLocalPort

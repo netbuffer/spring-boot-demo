@@ -181,4 +181,14 @@ public class ParamController {
         return ResponseEntity.status(HttpStatus.OK).contentType(mediaType).body(value);
     }
 
+    @GetMapping("getRemotePort")
+    public int getRemotePort(HttpServletRequest httpServletRequest) {
+        return httpServletRequest.getRemotePort();
+    }
+
+    @GetMapping("getLocalPort")
+    public int getLocalPort(HttpServletRequest httpServletRequest) {
+        return httpServletRequest.getLocalPort();
+    }
+
 }
