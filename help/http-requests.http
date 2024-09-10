@@ -58,3 +58,6 @@ GET http://localhost:9100/param/getRemotePort
 
 ### /param/getLocalPort
 GET http://localhost:9100/param/getLocalPort
+
+### /application/info
+GET http://localhost:9100/application/info
