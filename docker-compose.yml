@@ -10,6 +10,8 @@ services:
         cn.netbuffer.springboot.demo.author: "netbuffer"
         cn.netbuffer.springboot.demo.label-with-empty-value: ""
     image: netbuffer/spring-boot-demo:1.0
+    container_name: spring-boot-demo-container
+    hostname: spring-boot-demo
     ports:
       - "9100:9100"
     mem_swappiness: 70
@@ -22,5 +24,6 @@ services:
     environment:
       TZ: Asia/Shanghai
       JAVA_OPTS: -Xms4g -Xmx8g
-    container_name: spring-boot-demo-container
     restart: "no"
+    volumes:
+      - .env/docker-entrypoint.d/:/docker-entrypoint.d
