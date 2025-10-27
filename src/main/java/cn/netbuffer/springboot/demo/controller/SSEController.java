@@ -11,6 +11,9 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * test page:https://github.com/netbuffer/UItest/blob/master/es/eventsource.html
+ */
 @Slf4j
 @RestController
 @RequestMapping("/sse")
@@ -52,12 +55,12 @@ public class SSEController {
         return sseEmitter;
     }
 
-    @GetMapping("sendById")
+    @RequestMapping("sendById")
     public void sendById(String id, String message) throws IOException {
         log.debug("send message with SseEmitter id={}", id);
         SseEmitter emitter = sseEmitterMap.get(id);
         if (emitter != null) {
-            emitter.send(SseEmitter.event().data(message));
+            emitter.send(SseEmitter.event().data(message,MediaType.TEXT_PLAIN));
         }
     }
 
