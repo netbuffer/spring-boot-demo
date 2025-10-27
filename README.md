@@ -1,17 +1,18 @@
 # spring-boot-demo
 
 ![](https://img.shields.io/static/v1?label=java&message=1.8&color=blue)
-![](https://img.shields.io/static/v1?label=spring-boot&message=2.4.5.RELEASE&color=blue)
+![](https://img.shields.io/static/v1?label=spring-boot&message=2.7.18&color=blue)
 ![](https://img.shields.io/static/v1?label=spring-restdocs&message=2.0.4.RELEASE&color=blue)
 ![](https://img.shields.io/static/v1?label=junit&message=4.13.2&color=black)
 ![](https://img.shields.io/static/v1?label=hibernate-validator&message=6.1.7.Final&color=blue)
 
-* use spring-boot 2.x
+use spring-boot 2.x demo project
+
 * https://shields.io/
 * [github source](https://github.com/netbuffer/spring-boot-demo)
 * [gitee source](https://gitee.com/netbuffer/spring-boot-demo)
 * /actuator/health
-* [spring-boot-2.4.5-reference](https://docs.spring.io/spring-boot/docs/2.4.5/reference/htmlsingle/)
+* [spring-boot-2.7.18-reference](https://docs.spring.io/spring-boot/docs/2.7.18/reference/htmlsingle/)
 * [@ControllerAdvice](https://docs.spring.io/spring-framework/docs/5.3.6/reference/html/web.html#mvc-ann-controller-advice)
 * [Exceptions Process](https://docs.spring.io/spring-framework/docs/5.3.6/reference/html/web.html#mvc-ann-exceptionhandler)
 * [ResponseEntityExceptionHandler](https://docs.spring.io/spring-framework/docs/5.3.6/javadoc-api/org/springframework/web/servlet/mvc/method/annotation/ResponseEntityExceptionHandler.html)

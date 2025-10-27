@@ -10,10 +10,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.task.AsyncTaskExecutor;
 import org.springframework.http.MediaType;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import java.util.List;
 import java.util.concurrent.ThreadPoolExecutor;
 
 @Slf4j
@@ -73,6 +77,12 @@ public class WebMvcConfig implements WebMvcConfigurer {
         String filePrefix = "file:";
         registry.addResourceHandler("/uploads1/**").addResourceLocations(filePrefix + filePath1);
         registry.addResourceHandler("/uploads2/**").addResourceLocations(filePrefix + filePath2);
+    }
+
+    @Override
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+        converters.add(new MappingJackson2HttpMessageConverter());
+        converters.add(new StringHttpMessageConverter());
     }
 
 }

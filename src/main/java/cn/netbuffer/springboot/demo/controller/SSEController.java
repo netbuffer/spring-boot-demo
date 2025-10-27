@@ -24,6 +24,30 @@ public class SSEController {
     public SseEmitter handle(String id) {
         log.debug("new SseEmitter for id={}", id);
         SseEmitter sseEmitter = new SseEmitter(30 * 1000L);
+
+        // 添加超时和完成回调
+        sseEmitter.onTimeout(() -> {
+            log.debug("SseEmitter timeout for id={}", id);
+            sseEmitterMap.remove(id);
+        });
+
+        sseEmitter.onCompletion(() -> {
+            log.debug("SseEmitter completed for id={}", id);
+            sseEmitterMap.remove(id);
+        });
+
+        sseEmitter.onError((e) -> {
+            log.error("SseEmitter error for id={}: {}", id, e.getMessage());
+            sseEmitterMap.remove(id);
+        });
+
+        try {
+            // 发送初始事件
+            sseEmitter.send(SseEmitter.event().name("init").data("Connection established"));
+        } catch (IOException e) {
+            log.error("Failed to send initial event", e);
+        }
+
         sseEmitterMap.put(id, sseEmitter);
         return sseEmitter;
     }
