@@ -55,7 +55,10 @@ public class SSEController {
     @GetMapping("sendById")
     public void sendById(String id, String message) throws IOException {
         log.debug("send message with SseEmitter id={}", id);
-        sseEmitterMap.get(id).send(message);
+        SseEmitter emitter = sseEmitterMap.get(id);
+        if (emitter != null) {
+            emitter.send(SseEmitter.event().data(message));
+        }
     }
 
 }
