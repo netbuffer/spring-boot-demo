@@ -4,7 +4,7 @@
 ![](https://img.shields.io/static/v1?label=spring-boot&message=2.7.18&color=blue)
 ![](https://img.shields.io/static/v1?label=spring-restdocs&message=2.0.4.RELEASE&color=blue)
 ![](https://img.shields.io/static/v1?label=junit&message=4.13.2&color=black)
-![](https://img.shields.io/static/v1?label=hibernate-validator&message=6.1.7.Final&color=blue)
+![](https://img.shields.io/static/v1?label=hibernate-validator&message=6.2.5.Final&color=blue)
 
 use spring-boot 2.x demo project
 
