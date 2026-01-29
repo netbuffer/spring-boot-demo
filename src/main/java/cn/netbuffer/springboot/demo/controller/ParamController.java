@@ -34,6 +34,12 @@ public class ParamController {
     @Value("${var.map.name}")
     private String mapValue;
 
+    @GetMapping("boolean")
+    public Object getRandomVars(boolean enable) {
+        log.debug("receive enable={}", enable);
+        return enable;
+    }
+
     @GetMapping("random-var")
     public Object getRandomVars(String r) {
         Object value = null;
