@@ -9,7 +9,7 @@ services:
         cn.netbuffer.springboot.demo.description: "spring-boot-demo webapp"
         cn.netbuffer.springboot.demo.author: "netbuffer"
         cn.netbuffer.springboot.demo.label-with-empty-value: ""
-    image: netbuffer/spring-boot-demo:1.0
+    image: javawiki/spring-boot-demo:1.0
     container_name: spring-boot-demo-container
     hostname: spring-boot-demo
     ports:

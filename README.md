@@ -54,6 +54,26 @@ d for days
 
 ### docker镜像制作
 
+#### 自动构建（推荐）
+
+推送代码到 `master` / `main` 分支或创建 `v*` 标签时，GitHub Actions 会自动完成编译、打包并发布镜像。
+
+镜像**同时发布在 GitHub Container Registry 和 Docker Hub**，多架构支持 `linux/amd64` 与 `linux/arm64`：
+
+```bash
+# GitHub Container Registry（匿名可拉取）
+docker pull ghcr.io/netbuffer/spring-boot-demo:1.0
+
+# Docker Hub
+docker pull javawiki/spring-boot-demo:1.0
+```
+
+手动触发一次 Release：
+
+```bash
+git tag v1.0.1 && git push origin v1.0.1
+```
+
 #### 构建
 
 1. 先通过maven打包到target目录下
@@ -92,3 +112,40 @@ d for days
 * [SpringBoot使用基于json格式的配置方法](https://www.toutiao.com/i7016209186543469069)
 * [怎么查看SpringBoot工程中每个过滤器的执行顺序](https://www.toutiao.com/i7016666337527382532)
 * [Spring中出现NoUniqueBeanDefinitionException的解决方法](https://www.toutiao.com/i7018897444583113247)
+
+### CI/CD 配置
+
+#### 工作流
+
+`.github/workflows/build.yml` 定义 4 个 Job：
+
+| Job | 触发条件 | 职责 |
+|-----|----------|------|
+| `build` | push (master/main/v\*) + PR | Dragonwell JDK 8 编译，上传 `target/spring-boot-demo.jar` 为 artifact（保留 30 天） |
+| `release` | tag `v*` | 由 artifact 创建 GitHub Release，自动生成 release notes |
+| `docker-ghcr` | tag `v*` | 多架构（amd64 + arm64）构建并推送到 `ghcr.io/netbuffer/spring-boot-demo`，打 `:<VERSION>` 与 `:latest` |
+| `docker-hub` | tag `v*` | 多架构构建并推送到 `javawiki/spring-boot-demo`，打 `:<VERSION>` 与 `:latest` |
+
+#### 仓库 Secrets
+
+在仓库 **Settings → Secrets and variables → Actions** 中配置：
+
+| Secret | 必填 | 说明 |
+|--------|:----:|------|
+| `DOCKERHUB_USERNAME` | ✓ | Docker Hub 用户名（当前为 `javawiki`） |
+| `DOCKERHUB_TOKEN` | ✓ | Docker Hub Access Token，从 [hub.docker.com/settings/security](https://hub.docker.com/settings/security) 生成，需 `Read & Write` 权限 |
+| `GITHUB_TOKEN` | - | GitHub Actions 自动注入，**无需手动创建**，权限由 workflow 的 `permissions: packages: write` 决定 |
+
+#### ghcr.io 可见性
+
+第一次自动推送后，包默认是 **private**。前往仓库 **Settings → Packages → spring-boot-demo → Package settings → Danger Zone → Change visibility** 改为 **Public**。
+
+#### 本地调试 workflow
+
+可以用 [act](https://github.com/nektos/act)（本机需 Docker）模拟运行 `build` Job：
+
+```bash
+act push -j build
+```
+
+注意：`act` 无法完整模拟 `docker-ghcr` / `docker-hub` Job 的镜像推送。
